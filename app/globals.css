@@ -1,26 +1,203 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap");
 @import "tailwindcss";
 
+@theme {
+  --font-heading: Playfair Display, serif;
+  --font-content: Inter, sans-serif;
+}
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: 35 25% 96%;
+  --foreground: 25 15% 15%;
+
+  --card: 0 0% 100%;
+  --card-foreground: 25 15% 15%;
+
+  --popover: 0 0% 100%;
+  --popover-foreground: 25 15% 15%;
+
+  /* Royal Red - Primary Brand Color */
+  --primary: 355 70% 45%;
+  --primary-foreground: 0 0% 98%;
+  --primary-light: 355 65% 55%;
+  --primary-dark: 355 75% 35%;
+
+  /* Golden Yellow - Royal Accent */
+  --secondary: 45 95% 60%;
+  --secondary-foreground: 25 15% 15%;
+  --secondary-light: 45 90% 70%;
+  --secondary-dark: 45 100% 50%;
+
+  /* Royal Blue - Heritage Accent */
+  --accent: 220 70% 45%;
+  --accent-foreground: 0 0% 98%;
+  --accent-light: 220 65% 55%;
+
+  /* Earthy Brown - Heritage Base */
+  --muted: 30 20% 90%;
+  --muted-foreground: 25 25% 45%;
+  --earth-brown: 25 35% 35%;
+  --earth-brown-light: 25 30% 45%;
+
+  --destructive: 0 84.2% 60.2%;
+  --destructive-foreground: 0 0% 98%;
+
+  --border: 30 25% 85%;
+  --input: 30 25% 85%;
+  --ring: 355 70% 45%;
+
+  --sidebar-background: 0 0% 98%;
+  --sidebar-foreground: 240 5.3% 26.1%;
+  --sidebar-primary: 240 5.9% 10%;
+  --sidebar-primary-foreground: 0 0% 98%;
+  --sidebar-accent: 240 4.8% 95.9%;
+  --sidebar-accent-foreground: 240 5.9% 10%;
+  --sidebar-border: 220 13% 91%;
+  --sidebar-ring: 217.2 91.2% 59.8%;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
+
+  --color-card: hsl(var(--card));
+  --color-card-foreground: hsl(var(--card-foreground));
+
+  --color-popover: hsl(var(--popover));
+  --color-popover-foreground: hsl(var(--popover-foreground));
+
+  /* Royal Red - Primary Brand Color */
+  --color-primary: hsl(var(--primary));
+  --color-primary-foreground: hsl(var(--primary-foreground));
+  --color-primary-light: hsl(var(--primary-light));
+  --color-primary-dark: hsl(var(--primary-dark));
+
+  /* Golden Yellow - Royal Accent */
+  --color-secondary: hsl(var(--secondary));
+  --color-secondary-foreground: hsl(var(--secondary-foreground));
+  --color-secondary-light: hsl(var(--secondary-light));
+  --color-secondary-dark: hsl(var(--secondary-dark));
+
+  /* Royal Blue - Heritage Accent */
+  --color-accent: hsl(var(--accent));
+  --color-accent-foreground: hsl(var(--accent-foreground));
+  --color-accent-light: hsl(var(--accent-light));
+
+  /* Earthy Brown - Heritage Base */
+  --color-muted: hsl(var(--muted));
+  --color-muted-foreground: hsl(var(--muted-foreground));
+  --color-earth-brown: hsl(var(--earth-brown));
+  --color-earth-brown-light: hsl(var(--earth-brown-light));
+
+  --color-destructive: hsl(var(--destructive));
+  --color-destructive-foreground: hsl(var(--destructive-foreground));
+
+  --color-border: hsl(var(--border));
+  --color-input: hsl(var(--input));
+  --color-ring: hsl(var(--ring));
+
+  --shadow-royal: 0 10px 30px -10px hsl(var(--primary) / 0.3);
+  --shadow-golden: 0 8px 25px -8px hsl(var(--secondary) / 0.4);
+  --shadow-heritage: 0 15px 40px -15px hsl(var(--accent) / 0.2);
+  --shadow-elegant: 0 4px 15px -4px hsl(var(--foreground) / 0.1);
+
+  --color-sidebar-background: hsl(var(--sidebar-background));
+  --color-sidebar-foreground: hsl(var(--sidebar-foreground));
+  --color-sidebar-primary: hsl(var(--sidebar-primary));
+  --color-sidebar-primary-foreground: hsl(var(--sidebar-primary-foreground));
+  --color-sidebar-accent: hsl(var(--sidebar-accent));
+  --color-sidebar-accent-foreground: hsl(var(--sidebar-accent-foreground));
+  --color-sidebar-border: hsl(var(--sidebar-border));
+  --color-sidebar-ring: hsl(var(--sidebar-ring));
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-content antialiased;
+  }
+
+  /* Royal Rajasthani Animations */
+  .royal-fade-in {
+    animation: royal-fade-in 0.8s ease-out forwards;
+  }
+
+  .heritage-slide-up {
+    animation: heritage-slide-up 0.6s ease-out forwards;
+  }
+
+  .golden-glow:hover {
+    box-shadow: var(--shadow-golden);
+    transform: translateY(-2px);
+    transition: all 0.3s ease;
+  }
+
+  .royal-pattern::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23f59e0b' fill-opacity='0.05'%3E%3Cpath d='M30 30c0-16.569 13.431-30 30-30v60c-16.569 0-30-13.431-30-30z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    pointer-events: none;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer components {
+  /* Heritage Button Variants */
+  .btn-royal {
+    @apply bg-gradient-to-r from-primary to-primary-light text-primary-foreground font-semibold px-6 py-2 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1;
+  }
+
+  .btn-golden {
+    @apply bg-gradient-to-r from-secondary to-secondary-light text-secondary-foreground font-semibold px-6 py-2 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1;
+  }
+
+  .btn-heritage {
+    @apply bg-gradient-to-r from-accent to-accent-light text-accent-foreground font-semibold px-6 py-2 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1;
+  }
+
+  /* Royal Card Variants */
+  .card-royal {
+    @apply bg-card border border-border rounded-lg shadow-elegant hover:shadow-royal transition-all duration-300 overflow-hidden;
+  }
+
+  .card-heritage {
+    @apply bg-gradient-to-br from-card to-muted border border-border rounded-lg shadow-elegant hover:shadow-heritage transition-all duration-300 overflow-hidden;
+  }
+}
+
+@keyframes royal-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes heritage-slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
 }

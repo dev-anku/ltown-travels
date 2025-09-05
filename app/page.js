@@ -1,103 +1,176 @@
-import Image from "next/image";
+"use client";
+
+import ContactSection from "@/components/ContactSection";
+import AboutSection from "@/components/AboutSection";
+import { MapPin, Calendar, Hotel, Utensils, Camera, Car } from "lucide-react";
+
+import packages from "@/app/packages/packages";
+
+function HeroSection() {
+  return (
+    <section
+      id="hero"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden"
+    >
+      <div
+        className="absolute inset-0"
+        style={{
+          background: `url(/hawa-mahal.jpeg)`,
+          backgroundPosition: "center",
+          backgroundSize: "cover",
+          backgroundRepeat: "no-repeat",
+        }}
+      >
+        <div className="absolute inset-0 bg-black/40" />
+      </div>
+
+      <div className="absolute inset-0 royal-pattern opacity-20" />
+
+      <div className="relative z-10 container mx-auto px-4 text-center text-white">
+        <div className="max-w-4xl mx-auto royal-fade-in">
+          <h1 className="text-5xl md:text-6xl lg:text-7xl font-heading font-bold mb-6 leading-tight">
+            Discover
+            <span className="block bg-gradient-to-r from-secondary to-secondary-light bg-clip-text text-transparent">
+              Royal Rajasthan
+            </span>
+          </h1>
+
+          <p className="text-xl md:text-2xl mb-8 text-white/90 max-w-3xl mx-auto leading-normal">
+            Experience the majestic heritage, vibrant culture, and royal
+            splendor of Rajasthan with our carefully crafted tour packages and
+            authentic cultural experiences.
+          </p>
+
+          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
+            <a href="#packages">
+              <button className="btn-golden">Explore Packages</button>
+            </a>
+            <a href="/contact">
+              <button className="px-6 py-2 rounded-lg bg-white/10 backdrop-blur-sm border-2 border-white/30 text-white hover:bg-white/20">
+                Plan My Trip
+              </button>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function PackagesSection() {
+  return (
+    <section id="packages" className="py-20 bg-background">
+      <div className="container mx-auto px-4">
+        <div className="text-center mb-16 royal-fade-in">
+          <h2 className="text-4xl md:text-5xl font-heading font-bold text-foreground mb-6">
+            Our Best{" "}
+            <span className="text-primary">Rajasthan Tour Packages</span>
+          </h2>
+          <div className="w-24 h-1 bg-gradient-to-r from-primary to-secondary mx-auto mb-6" />
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+            We provide the best tour packages at an affordable price. Book your
+            perfect tour itinerary and explore all the exciting tourist cities
+            in Rajasthan.
+          </p>
+        </div>
+
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {packages.map((pkg, index) => (
+            <div
+              key={pkg.title}
+              className={`card-royal golden-glow heritage-slide-up relative overflow-hidden group`}
+              style={{ animationDelay: `${index * 0.1}s` }}
+            >
+              <div className="relative overflow-hidden">
+                <img
+                  src={pkg.image}
+                  alt={pkg.title}
+                  className="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
+                <div className="absolute bottom-4 left-4 text-white">
+                  <div className="flex items-center space-x-2 mb-2">
+                    <Calendar className="h-4 w-4" />
+                    <span className="text-sm font-medium">{pkg.duration}</span>
+                  </div>
+                  <div className="flex items-center space-x-2">
+                    <MapPin className="h-4 w-4" />
+                    <span className="text-sm">{pkg.destinations}</span>
+                  </div>
+                </div>
+              </div>
+
+              <div className="p-6">
+                <div className="pb-4">
+                  <div className="flex items-start justify-between mb-2">
+                    <h3 className="text-xl font-heading font-semibold text-foreground line-clamp-2">
+                      {pkg.title}
+                    </h3>
+                  </div>
+                </div>
+
+                <div className="pt-0">
+                  <div className="grid grid-cols-2 gap-2 mb-6">
+                    <div className="flex items-center space-x-2 text-sm text-muted-foreground">
+                      <Hotel className="h-4 w-4" />
+                      <span>Luxury Hotels</span>
+                    </div>
+                    <div className="flex items-center space-x-2 text-sm text-muted-foreground">
+                      <Utensils className="h-4 w-4" />
+                      <span>All Meals</span>
+                    </div>
+                    <div className="flex items-center space-x-2 text-sm text-muted-foreground">
+                      <Camera className="h-4 w-4" />
+                      <span>Sightseeing</span>
+                    </div>
+                    <div className="flex items-center space-x-2 text-sm text-muted-foreground">
+                      <Car className="h-4 w-4" />
+                      <span>Private Transfer</span>
+                    </div>
+                  </div>
+
+                  <div className="space-y-3">
+                    <a
+                      className="block"
+                      href="https://api.whatsapp.com/send?phone=917073304076"
+                    >
+                      <button className="btn-royal w-full">Book Now</button>
+                    </a>
+                    <a className="block" href={pkg.link}>
+                      <button className="w-full px-6 font-medium py-2 border border-border bg-gray-200/30 rounded-lg hover:bg-gray-200/80 transition-all duration-300">
+                        View Details
+                      </button>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <div className="text-center mt-12 heritage-slide-up">
+          <p className="text-lg text-muted-foreground mb-6">
+            Can&apos;t find the perfect package? Let us create a custom
+            itinerary just for you!
+          </p>
+          <a href="/contact">
+            <button className="btn-golden text-lg px-8 py-3">
+              Customize Your Tour
+            </button>
+          </a>
+        </div>
+      </div>
+    </section>
+  );
+}
 
 export default function Home() {
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              app/page.js
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+    <>
+      <HeroSection />
+      <AboutSection />
+      <PackagesSection />
+      <ContactSection />
+    </>
   );
 }
