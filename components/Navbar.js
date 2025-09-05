@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { Menu, X, Phone, Mail } from "lucide-react";
+import Link from "next/link";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -64,18 +65,18 @@ export default function Navbar() {
           {/* Desktop navigation */}
           <div className="hidden md:flex items-center space-x-8">
             {navItems.map((item) => (
-              <a key={item.name} href={item.href}>
+              <Link key={item.name} href={item.href}>
                 <button
                   className={`font-medium ${isScrolled ? "text-foreground" : "text-white"} hover:text-primary transition-colors duration-200 relative group`}
                 >
                   {item.name}
                   <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full" />
                 </button>
-              </a>
+              </Link>
             ))}
-            <a href="tel: +917073304076">
+            <Link href="tel: +917073304076">
               <button className="btn-royal">Call Now</button>
-            </a>
+            </Link>
           </div>
 
           {/* Mobile menu button */}
@@ -98,16 +99,16 @@ export default function Navbar() {
         <div className="md:hidden bg-background/95 backdrop-blur-md border-t border-border">
           <div className="px-2 pt-2 pb-3 space-y-1">
             {navItems.map((item) => (
-              <a key={item.name} href={item.href}>
+              <Link key={item.name} href={item.href}>
                 <button className="block w-full text-left px-3 py-2 text-base font-medium text-foreground hover:text-primary hover:bg-muted rounded-md transition-colors duration-200">
                   {item.name}
                 </button>
-              </a>
+              </Link>
             ))}
             <div className="px-3 py-2">
-              <a href="tel: +917073304076">
+              <Link href="tel: +917073304076">
                 <button className="btn-royal w-full">Call Now</button>
-              </a>
+              </Link>
             </div>
           </div>
         </div>

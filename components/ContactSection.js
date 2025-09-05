@@ -1,4 +1,5 @@
 import { Phone, Mail, MapPin, Clock, Send, MessageCircle } from "lucide-react";
+import Link from "next/link";
 
 export default function ContactSection() {
   const contactInfo = [
@@ -96,14 +97,14 @@ export default function ContactSection() {
             </h3>
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
               {quickLinks.map((link, index) => (
-                <a
+                <Link
                   key={index}
                   href={link.href}
                   className="flex items-center justify-center space-x-2 bg-white/20 backdrop-blur-sm rounded-lg py-3 px-4 hover:bg-white/30 transition-all duration-200 text-sm font-medium"
                 >
                   {link.icon}
                   <span>{link.name}</span>
-                </a>
+                </Link>
               ))}
             </div>
           </div>

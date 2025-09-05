@@ -1,4 +1,6 @@
 import { MapPin, Hotel, Utensils, Car, Clock } from "lucide-react";
+import Link from "next/link";
+
 
 import packages from "@/app/packages/packages";
 
@@ -131,16 +133,16 @@ export default function Page() {
             Ready to Experience Royal Rajasthan?
           </h2>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="https://api.whatsapp.com/send?phone=917073304076">
+            <Link href="https://api.whatsapp.com/send?phone=917073304076">
               <button className="btn-royal text-lg px-8 py-3">
                 Book This Tour
               </button>
-            </a>
-            <a href="/#packages">
+            </Link>
+            <Link href="/#packages">
               <button className="text-lg px-8 py-3 font-medium border border-border bg-gray-200/30 rounded-lg hover:bg-gray-200/80 transition-all duration-300">
                 View More
               </button>
-            </a>
+            </Link>
           </div>
         </div>
       </div>

@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function Footer() {
   return (
     <footer className="bg-foreground text-background py-12">
@@ -17,33 +19,33 @@ export default function Footer() {
             <h4 className="font-semibold mb-4">Quick Links</h4>
             <ul className="space-y-2 text-background/80">
               <li>
-                <a href="/" className="hover:text-secondary transition-colors">
+                <Link href="/" className="hover:text-secondary transition-colors">
                   Home
-                </a>
+                </Link>
               </li>
               <li>
-                <a
+                <Link
                   href="/about"
                   className="hover:text-secondary transition-colors"
                 >
                   About
-                </a>
+                </Link>
               </li>
               <li>
-                <a
+                <Link
                   href="/#packages"
                   className="hover:text-secondary transition-colors"
                 >
                   Packages
-                </a>
+                </Link>
               </li>
               <li>
-                <a
+                <Link
                   href="/contact"
                   className="hover:text-secondary transition-colors"
                 >
                   Contact
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
@@ -52,24 +54,24 @@ export default function Footer() {
             <h4 className="font-semibold mb-4">Popular Destinations</h4>
             <ul className="space-y-2 text-background/80">
               <li>
-                <a href="#" className="hover:text-secondary transition-colors">
+                <Link href="#" className="hover:text-secondary transition-colors">
                   Jaipur
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="hover:text-secondary transition-colors">
+                <Link href="#" className="hover:text-secondary transition-colors">
                   Udaipur
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="hover:text-secondary transition-colors">
+                <Link href="#" className="hover:text-secondary transition-colors">
                   Jaisalmer
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="hover:text-secondary transition-colors">
+                <Link href="#" className="hover:text-secondary transition-colors">
                   Jodhpur
-                </a>
+                </Link>
               </li>
             </ul>
           </div>

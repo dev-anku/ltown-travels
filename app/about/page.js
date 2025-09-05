@@ -11,7 +11,7 @@ export default function Page() {
         <div className="absolute inset-0 bg-black/40" />
         <div className="relative text-center text-white z-10">
           <h1 className="text-5xl md:text-6xl font-heading font-bold mb-4">
-    About Us
+            About Us
           </h1>
         </div>
       </section>

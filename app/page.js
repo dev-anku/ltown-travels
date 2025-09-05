@@ -3,6 +3,7 @@
 import ContactSection from "@/components/ContactSection";
 import AboutSection from "@/components/AboutSection";
 import { MapPin, Calendar, Hotel, Utensils, Camera, Car } from "lucide-react";
+import Link from "next/link";
 
 import packages from "@/app/packages/packages";
 
@@ -42,14 +43,14 @@ function HeroSection() {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-            <a href="#packages">
+            <Link href="#packages">
               <button className="btn-golden">Explore Packages</button>
-            </a>
-            <a href="/contact">
+            </Link>
+            <Link href="/contact">
               <button className="px-6 py-2 rounded-lg bg-white/10 backdrop-blur-sm border-2 border-white/30 text-white hover:bg-white/20">
                 Plan My Trip
               </button>
-            </a>
+            </Link>
           </div>
         </div>
       </div>
@@ -130,17 +131,17 @@ function PackagesSection() {
                   </div>
 
                   <div className="space-y-3">
-                    <a
+                    <Link
                       className="block"
                       href="https://api.whatsapp.com/send?phone=917073304076"
                     >
                       <button className="btn-royal w-full">Book Now</button>
-                    </a>
-                    <a className="block" href={pkg.link}>
+                    </Link>
+                    <Link className="block" href={pkg.link}>
                       <button className="w-full px-6 font-medium py-2 border border-border bg-gray-200/30 rounded-lg hover:bg-gray-200/80 transition-all duration-300">
                         View Details
                       </button>
-                    </a>
+                    </Link>
                   </div>
                 </div>
               </div>
@@ -153,11 +154,11 @@ function PackagesSection() {
             Can&apos;t find the perfect package? Let us create a custom
             itinerary just for you!
           </p>
-          <a href="/contact">
+          <Link href="/contact">
             <button className="btn-golden text-lg px-8 py-3">
               Customize Your Tour
             </button>
-          </a>
+          </Link>
         </div>
       </div>
     </section>

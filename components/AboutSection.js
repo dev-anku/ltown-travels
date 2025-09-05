@@ -1,4 +1,5 @@
 import { Shield, Heart, Users, Crown } from "lucide-react";
+import Link from "next/link";
 
 export default function AboutSection() {
   const features = [
