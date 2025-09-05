@@ -57,7 +57,7 @@ export default function Navbar() {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <div className="flex items-center">
-            <h1 className="text-2xl font-heading font-bold bg-gradient-to-r from-primary to-primary-dark bg-clip-text text-transparent">
+            <h1 className="text-2xl font-heading font-bold bg-gradient-to-r from-secondary to-secondary-dark bg-clip-text text-transparent">
               Jaipur Travels
             </h1>
           </div>
