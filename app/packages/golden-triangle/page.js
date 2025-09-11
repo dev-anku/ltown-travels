@@ -110,7 +110,7 @@ export default function Page() {
                   className="border-l-4 rounded-sm border-primary pl-6 pb-6"
                 >
                   <div className="flex items-center space-x-3 mb-3">
-                    <div className="px-4 py-1 rounded-full bg-primary text-primary-foreground">
+                    <div className="flex items-center justify-center whitespace-nowrap px-4 py-1 rounded-full bg-primary text-primary-foreground">
                       Day {day.day}
                     </div>
                     <h3 className="text-xl font-semibold text-foreground">

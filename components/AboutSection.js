@@ -34,7 +34,7 @@ export default function AboutSection() {
       <div className="container mx-auto px-4">
         <div className="text-center mb-16 royal-fade-in">
           <h2 className="text-4xl md:text-5xl font-heading font-bold text-foreground mb-6">
-            About <span className="text-primary">Jaipur Travels</span>
+            About <span className="text-primary">L Town Travels</span>
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-primary to-secondary mx-auto mb-6" />
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
@@ -50,7 +50,7 @@ export default function AboutSection() {
               Your Gateway to Royal Rajasthan
             </h3>
             <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
-              Jaipur Travels is a company full of trusted, well-experienced and
+              L Town Travels is a company full of trusted, well-experienced and
               qualified travel professionals that delivers tailor-made tours,
               holiday packages, and journeys among various superb destinations
               within Rajasthan.
@@ -96,7 +96,7 @@ export default function AboutSection() {
         <div className="bg-gradient-to-r from-primary to-accent rounded-2xl p-8 md:p-12 text-white heritage-slide-up">
           <div className="text-center mb-8">
             <h3 className="text-3xl font-heading font-bold mb-4">
-              Why Choose Jaipur Travels?
+              Why Choose L Town Travels?
             </h3>
             <p className="text-white/90 text-lg max-w-2xl mx-auto">
               Experience the difference with our commitment to excellence and
