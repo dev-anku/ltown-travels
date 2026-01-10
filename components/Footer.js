@@ -7,7 +7,7 @@ export default function Footer() {
         <div className="grid md:grid-cols-4 gap-8">
           <div>
             <h3 className="text-2xl font-heading font-bold mb-4 bg-gradient-to-r from-secondary to-primary bg-clip-text text-transparent">
-              L Town Travels
+              Rajasthan Tours and Travels
             </h3>
             <p className="text-background/80 leading-relaxed">
               Your trusted partner for exploring the royal heritage and vibrant
@@ -95,14 +95,14 @@ export default function Footer() {
             <h4 className="font-semibold mb-4">Contact Info</h4>
             <div className="space-y-2 text-background/80">
               <p>Phone: +91 7073304076</p>
-              <p>Email: info@ltowntravels.in</p>
+              <p>Email: ltownresortjaipur@gmail.com</p>
               <p>Location: Pink City, Jaipur, Rajasthan</p>
             </div>
           </div>
         </div>
 
         <div className="border-t border-background/20 mt-8 pt-8 text-center text-background/80">
-          <p>&copy; 2025 L Town Travels. All rights reserved.</p>
+          <p>&copy; 2025 Rajasthan Tours and Travels. All rights reserved.</p>
         </div>
       </div>
     </footer>

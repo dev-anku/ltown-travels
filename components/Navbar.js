@@ -43,7 +43,7 @@ export default function Navbar() {
             </div>
             <div className="flex items-center space-x-2">
               <Mail className="h-4 w-4" />
-              <span>info@ltowntravels.in</span>
+              <span>ltownresortjaipur@gmail.com</span>
             </div>
           </div>
           <div className="hidden md:block">
@@ -58,7 +58,7 @@ export default function Navbar() {
           {/* Logo */}
           <div className="flex items-center">
             <h1 className="text-2xl font-heading font-bold bg-gradient-to-r from-secondary to-secondary-dark bg-clip-text text-transparent">
-              L Town Travels
+              Rajasthan Tours and Travels
             </h1>
           </div>
 

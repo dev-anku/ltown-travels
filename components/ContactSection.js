@@ -12,8 +12,8 @@ export default function ContactSection() {
     {
       icon: <Mail className="h-6 w-6" />,
       title: "Email Us",
-      details: ["info@ltowntravels.in", "Quick Response Guaranteed"],
-      action: "mailto:info@ltowntravels.in",
+      details: ["ltownresortjaipur@gmail.com", "Quick Response Guaranteed"],
+      action: "mailto:ltownresortjaipur@gmail.com",
     },
     {
       icon: <MapPin className="h-6 w-6" />,
