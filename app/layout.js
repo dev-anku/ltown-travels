@@ -46,8 +46,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             src="https://www.googletagmanager.com/ns.html?id=GTM-P6MBZ9PF"
             height="0"
             width="0"
-            style="display:none;visibility:hidden"
-          ></iframe>
+            style={{ display: "none", visibility: "hidden" }}
+          />
         </noscript>
         {/* <!-- End Google Tag Manager (noscript) --> */}
         <Navbar />
