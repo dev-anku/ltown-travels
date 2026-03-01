@@ -132,7 +132,11 @@ export default function Page() {
             Ready to Experience Royal Rajasthan?
           </h2>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="https://api.whatsapp.com/send?phone=917073304076">
+            <Link
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://api.whatsapp.com/send?phone=917073304076"
+            >
               <button className="btn-royal text-lg px-8 py-3">
                 Book This Tour
               </button>

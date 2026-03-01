@@ -133,6 +133,8 @@ function PackagesSection() {
                   <div className="space-y-3">
                     <Link
                       className="block"
+                      target="_blank"
+                      rel="noopener noreferrer"
                       href="https://api.whatsapp.com/send?phone=917073304076"
                     >
                       <button className="btn-royal w-full">Book Now</button>
